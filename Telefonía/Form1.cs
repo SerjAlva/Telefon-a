@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using DatosTelefono;
 
 namespace Telefonía
 {
@@ -15,6 +10,25 @@ namespace Telefonía
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void dgvTelefonia_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        
+        }
+
+        private void txtTelefono_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLugar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == 13)
+            {
+                TelefonoDatos telefonoDatos = new TelefonoDatos(txtTelefono.Text, txtLugar.Text);
+                dgvTelefonia.Rows.Add(telefonoDatos.telefono, telefonoDatos.lugar);
+            }
         }
     }
 }
