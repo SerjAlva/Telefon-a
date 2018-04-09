@@ -26,6 +26,7 @@ namespace Telefonía
         {
             if(e.KeyChar == 13)
             {
+                //Hola hola hola 
                 TelefonoDatos telefonoDatos = new TelefonoDatos(txtTelefono.Text, txtLugar.Text);
                 dgvTelefonia.Rows.Add(telefonoDatos.telefono, telefonoDatos.lugar);
             }
